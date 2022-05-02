@@ -3,6 +3,7 @@ package com.example.demo2513.entity;
 
 public class Product {
     private String name;
+    private String description;
 
     public String getName() {
         return name;
@@ -20,6 +21,6 @@ public class Product {
         this.description = description;
     }
 
-    private String description;
+
 
 }

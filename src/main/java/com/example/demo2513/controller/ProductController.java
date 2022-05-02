@@ -16,7 +16,7 @@ public class ProductController {
     private ProcedureService procedureService;
 
     @PostMapping("/products")
-    public String saveProduct(@RequestBody Product product) throws ExecutionException, InterruptedException {
+        public String saveProduct(@RequestBody Product product) throws ExecutionException, InterruptedException {
         return procedureService.saveProcedure(product);
     }
 
