@@ -9,6 +9,16 @@ public class Product {
     private String description;
     private String imageView;
 
+    private String quantity;
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
+
     public String getId() {
         return id;
     }
