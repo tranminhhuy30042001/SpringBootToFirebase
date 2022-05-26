@@ -2,11 +2,20 @@ package com.example.demo2513.entity;
 
 
 public class Product {
+    private String id;
     private String name;
     private String price;
     private String type;
     private String description;
     private String imageView;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getPrice() {
         return price;

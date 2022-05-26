@@ -21,7 +21,7 @@ public class ProcedureService {
     private static final String COLLECTION_NAME = "products";
     public String saveProcedure(Product product) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection(COLLECTION_NAME).document(product.getName()).set(product);
+        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection(COLLECTION_NAME).document(product.getId()).set(product);
         return collectionApiFuture.get().getUpdateTime().toString();
 
     }
@@ -64,7 +64,7 @@ public class ProcedureService {
 
     public String updateProcedure(Product product) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection(COLLECTION_NAME).document(product.getName()).set(product);
+        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection(COLLECTION_NAME).document(product.getId()).set(product);
         return collectionApiFuture.get().getUpdateTime().toString();
 
     }
