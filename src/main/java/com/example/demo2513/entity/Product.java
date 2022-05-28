@@ -8,7 +8,6 @@ public class Product {
     private String type;
     private String description;
     private String imageView;
-
     private String quantity;
 
     public String getQuantity() {
