@@ -7,7 +7,7 @@ public class Cart {
     private String email;
     private String name;
     private String address;
-    private ArrayList<Product> listorder;
+    private List<Product> listorder;
     private String orderdate;
     private String phone;
 
