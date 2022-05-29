@@ -1,0 +1,51 @@
+package com.example.demo2513.entity;
+
+import java.util.List;
+
+public class Cart {
+    private String name;
+    private String address;
+    private List<Product> listorder;
+    private String orderdate;
+    private String phone;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public List<Product> getListorder() {
+        return listorder;
+    }
+
+    public void setListorder(List<Product> listorder) {
+        this.listorder = listorder;
+    }
+
+    public String getOrderdate() {
+        return orderdate;
+    }
+
+    public void setOrderdate(String orderdate) {
+        this.orderdate = orderdate;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+}
