@@ -1,12 +1,13 @@
 package com.example.demo2513.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
     private String email;
     private String name;
     private String address;
-    private List<Product> listorder;
+    private ArrayList<Product> listorder;
     private String orderdate;
     private String phone;
 
@@ -38,7 +39,7 @@ public class Cart {
         return listorder;
     }
 
-    public void setListorder(List<Product> listorder) {
+    public void setListorder(ArrayList<Product> listorder) {
         this.listorder = listorder;
     }
 
