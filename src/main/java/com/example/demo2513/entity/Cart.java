@@ -7,7 +7,7 @@ public class Cart {
     private String email;
     private String name;
     private String address;
-    private List<Product> listorder;
+    private List<CartItem> listorder;
     private String orderdate;
     private String phone;
 
@@ -35,11 +35,11 @@ public class Cart {
         this.address = address;
     }
 
-    public List<Product> getListorder() {
+    public List<CartItem> getListorder() {
         return listorder;
     }
 
-    public void setListorder(ArrayList<Product> listorder) {
+    public void setListorder(ArrayList<CartItem> listorder) {
         this.listorder = listorder;
     }
 
