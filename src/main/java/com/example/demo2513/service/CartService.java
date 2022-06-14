@@ -19,7 +19,7 @@ public class CartService {
     private static final String COLLECTION_NAME = "cart";
     public String saveProcedure(Cart cart) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection(COLLECTION_NAME).document(cart.getEmail()).set(cart);
+        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection(COLLECTION_NAME).document(cart.getAddress()).set(cart);
         return collectionApiFuture.get().getUpdateTime().toString();
 
     }
@@ -62,7 +62,7 @@ public class CartService {
 
     public String updateProcedure(Cart cart) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection(COLLECTION_NAME).document(cart.getEmail()).set(cart);
+        ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection(COLLECTION_NAME).document(cart.getAddress()).set(cart);
         return collectionApiFuture.get().getUpdateTime().toString();
 
     }
