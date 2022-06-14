@@ -1,7 +1,7 @@
 package com.example.demo2513.controller;
 
-import com.example.demo2513.entity.Cart;
-import com.example.demo2513.service.CartService;
+import com.example.demo2513.entity.Sold;
+import com.example.demo2513.service.SoldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,29 +12,29 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("/api")
 public class SoldController {
     @Autowired
-    private CartService cartService;
+    private SoldService cartService;
 
     @PostMapping("/sold")
-    public String saveCart(@RequestBody Cart cart) throws ExecutionException, InterruptedException {
+    public String saveSold(@RequestBody Sold cart) throws ExecutionException, InterruptedException {
         return cartService.saveProcedure(cart);
     }
 
     @GetMapping("/sold/{name}")
-    public Cart getCart(@PathVariable String name) throws ExecutionException, InterruptedException {
-        return cartService.getCartDetailByname(name);
+    public Sold getSold(@PathVariable String name) throws ExecutionException, InterruptedException {
+        return cartService.getSoldDetailByname(name);
     }
     @GetMapping("/sold")
-    public List<Cart> getAllCart() throws ExecutionException, InterruptedException {
-        return cartService.getCartDetail();
+    public List<Sold> getAllSold() throws ExecutionException, InterruptedException {
+        return cartService.getSoldDetail();
     }
 
     @PutMapping("/sold")
-    public String update(@RequestBody Cart cart) throws ExecutionException, InterruptedException {
+    public String update(@RequestBody Sold cart) throws ExecutionException, InterruptedException {
         return cartService.updateProcedure(cart);
     }
 
     @DeleteMapping("/sold/{name}")
-    public String deleteCart(@PathVariable String name) throws ExecutionException, InterruptedException {
+    public String deleteSold(@PathVariable String name) throws ExecutionException, InterruptedException {
         return cartService.deleteProcedure(name);
     }
 }

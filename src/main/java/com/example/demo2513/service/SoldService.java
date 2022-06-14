@@ -1,6 +1,6 @@
 package com.example.demo2513.service;
 
-import com.example.demo2513.entity.Cart;
+import com.example.demo2513.entity.Sold;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
@@ -17,42 +17,42 @@ import java.util.concurrent.ExecutionException;
 @Service
 public class SoldService {
     private static final String COLLECTION_NAME = "sold";
-    public String saveProcedure(Cart cart) throws ExecutionException, InterruptedException {
+    public String saveProcedure(Sold cart) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection(COLLECTION_NAME).document(cart.getAddress()).set(cart);
         return collectionApiFuture.get().getUpdateTime().toString();
 
     }
 
-    public List<Cart> getCartDetail() throws ExecutionException, InterruptedException {
+    public List<Sold> getSoldDetail() throws ExecutionException, InterruptedException {
 
         Firestore dbFirestore = FirestoreClient.getFirestore();
         Iterable<DocumentReference> documentReference = dbFirestore.collection(COLLECTION_NAME).listDocuments();
         Iterator<DocumentReference> iterator = documentReference.iterator();
 
-        List<Cart> cartsList = new ArrayList<>();
-        Cart cart = null;
+        List<Sold> cartsList = new ArrayList<>();
+        Sold cart = null;
         while (iterator.hasNext())
         {
             DocumentReference documentReference1 = iterator.next();
             ApiFuture<DocumentSnapshot> future =documentReference1.get();
             DocumentSnapshot document = future.get();
-            cart = document.toObject(Cart.class);
+            cart = document.toObject(Sold.class);
             cartsList.add(cart);
         }
         return cartsList;
 
 
     }
-    public Cart getCartDetailByname(String name) throws ExecutionException, InterruptedException {
+    public Sold getSoldDetailByname(String name) throws ExecutionException, InterruptedException {
 
         Firestore dbFirestore = FirestoreClient.getFirestore();
         DocumentReference documentReference = dbFirestore.collection(COLLECTION_NAME).document(name);
         ApiFuture<DocumentSnapshot> future = documentReference.get();
         DocumentSnapshot document = future.get();
-        Cart cart = null;
+        Sold cart = null;
         if(document.exists()){
-            cart=document.toObject(Cart.class);
+            cart=document.toObject(Sold.class);
             return cart;
         }
         else
@@ -60,7 +60,7 @@ public class SoldService {
 
     }
 
-    public String updateProcedure(Cart cart) throws ExecutionException, InterruptedException {
+    public String updateProcedure(Sold cart) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection(COLLECTION_NAME).document(cart.getAddress()).set(cart);
         return collectionApiFuture.get().getUpdateTime().toString();
