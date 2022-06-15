@@ -11,6 +11,16 @@ public class Cart {
     private String orderdate;
     private String phone;
 
+    private String offer;
+
+    public String getOffer() {
+        return offer;
+    }
+
+    public void setOffer(String offer) {
+        this.offer = offer;
+    }
+
     public String getEmail() {
         return email;
     }
