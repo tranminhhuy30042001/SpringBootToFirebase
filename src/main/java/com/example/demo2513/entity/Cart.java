@@ -11,12 +11,6 @@ public class Cart {
     private String orderdate;
     private String phone;
 
-    private String offer;
-
-    public void setListorder(List<CartItem> listorder) {
-        this.listorder = listorder;
-    }
-
     public String getEmail() {
         return email;
     }
