@@ -11,6 +11,20 @@ public class Cart {
     private String orderdate;
     private String phone;
 
+    private String giamGia;
+
+    public void setListorder(List<CartItem> listorder) {
+        this.listorder = listorder;
+    }
+
+    public String getGiamGia() {
+        return giamGia;
+    }
+
+    public void setGiamGia(String giamGia) {
+        this.giamGia = giamGia;
+    }
+
     public String getEmail() {
         return email;
     }
