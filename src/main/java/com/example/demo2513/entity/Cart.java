@@ -11,7 +11,7 @@ public class Cart {
     private String orderdate;
     private String phone;
 
-    private String giamGia;
+    private String giamgia;
 
     public void setListorder(List<CartItem> listorder) {
         this.listorder = listorder;
