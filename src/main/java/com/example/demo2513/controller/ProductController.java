@@ -15,26 +15,26 @@ public class ProductController {
     @Autowired
     private ProcedureService procedureService;
 
-    @PostMapping("/products")
+    @PostMapping("/product")
         public String saveProduct(@RequestBody Product product) throws ExecutionException, InterruptedException {
         return procedureService.saveProcedure(product);
     }
 
-    @GetMapping("/products/{name}")
+    @GetMapping("/product/{name}")
     public Product getProduct(@PathVariable String name) throws ExecutionException, InterruptedException {
         return procedureService.getProductDetailByname(name);
     }
-    @GetMapping("/products")
+    @GetMapping("/product")
     public List<Product> getAllProduct() throws ExecutionException, InterruptedException {
         return procedureService.getProductDetail();
     }
 
-    @PutMapping("/products")
+    @PutMapping("/product")
     public String update(@RequestBody Product product) throws ExecutionException, InterruptedException {
         return procedureService.updateProcedure(product);
     }
 
-    @DeleteMapping("/products/{name}")
+    @DeleteMapping("/product/{name}")
     public String deleteProduct(@PathVariable String name) throws ExecutionException, InterruptedException {
         return procedureService.deleteProcedure(name);
     }

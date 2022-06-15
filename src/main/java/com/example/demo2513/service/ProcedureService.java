@@ -18,7 +18,7 @@ import java.util.concurrent.ExecutionException;
 
 @Service
 public class ProcedureService {
-    private static final String COLLECTION_NAME = "products";
+    private static final String COLLECTION_NAME = "product";
     public String saveProcedure(Product product) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionApiFuture = dbFirestore.collection(COLLECTION_NAME).document(product.getId()).set(product);
