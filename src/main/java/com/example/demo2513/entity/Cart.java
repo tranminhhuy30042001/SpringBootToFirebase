@@ -17,12 +17,12 @@ public class Cart {
         this.listorder = listorder;
     }
 
-    public String getGiamGia() {
-        return giamGia;
+    public String getGiamgia() {
+        return giamgia;
     }
 
-    public void setGiamGia(String giamGia) {
-        this.giamGia = giamGia;
+    public void setGiamgia(String giamgia) {
+        this.giamgia = giamgia;
     }
 
     public String getEmail() {
